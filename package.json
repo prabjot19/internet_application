@@ -1,0 +1,22 @@
+{
+  "name": "internet_application",
+  "version": "1.0.0",
+  "description": "lab intro",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prabjot19/internet_application.git"
+  },
+  "author": "180063963",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prabjot19/internet_application/issues"
+  },
+  "homepage": "https://github.com/prabjot19/internet_application#readme",
+  "dependencies": {
+    "mocha": "^7.0.1"
+  }
+}
