@@ -1,10 +1,9 @@
 console.log('index.js executing');
 var express= require('express');
 var app= express();
+var router = require('./routes/hello.js');
 
-app.get('/', function(req,res){
-	res.send('Hello, World!');
-});
+app.use('/',router);
 
 var port = 3000;
 app.listen(port,function(){

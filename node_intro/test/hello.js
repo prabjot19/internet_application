@@ -10,32 +10,29 @@ describe('hello API',function(){
 	before(function(done){
 		var express= require('express');
 		var app= express();
-
-		app.get('/', function(req,res){
-			res.send('Hello, World!');
-		});
-
+		var router = require('../routes/hello.js');
+		app.use('/',router);
 		var port = 3000;
-		server = app.listen(port,function(){
-			console.log('Listening on port ' + port);
-		});
+		server = app.listen(port,function(){done()});
 	});
-	after(function(done){
+	
+	after(function(){
 		server.close();
 	});
 	it('get request returns text "Hello, World!". ',function(done){
 		request.get(apiRoot).end(function(err,res){
 			expect(err).to.not.be.an('error');
 			expect(res.statusCode).to.equal(status.OK);
-			expect(res.text).to.equal('Hello World!');
+			expect(res.text).to.equal('Hello, World!');
 			done();
 		});
 	});
 	
 	it('POST request is not allowed ', function(done){
 		request.post(apiRoot).end(function(err,res){
-			expect(err).to.not.be.an('error');
+			expect(err).to.be.an('error');
 			expect(res.statusCode).to.equal(status.METHOD_NOT_ALLOWED);
+			done();
 		});
 	});
 });
