@@ -17,8 +17,11 @@
   },
   "homepage": "https://github.com/prabjot19/internet_application#readme",
   "dependencies": {
+    "async": "^3.1.1",
     "chai": "^4.2.0",
     "express": "^4.17.1",
-    "mocha": "^7.0.1"
+    "mocha": "^7.0.1",
+    "mongoose": "^5.8.11",
+    "sanitize-html": "^1.21.1"
   }
 }
